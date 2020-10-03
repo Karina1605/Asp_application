@@ -1,0 +1,18 @@
+﻿
+@model  WebApplication2.Controllers.HomeController
+@{
+    ViewBag.Title = "Магазин музыкальнынх инструментов";
+}
+<h2>Index</h2>
+<button onclick="location.href='@Url.Action("InputNewCustomer")'">
+    Добавить клиента
+</button><br />
+<button onclick="location.href='@Url.Action("AllOrdersOfCustomer")'">
+    Просмотреть заказы по эп покупателя
+</button><br />
+<button onclick="location.href='@Url.Action("InputNewInstrument")'">
+    Ввести продукт
+</button><br />
+<button onclick="location.href='@Url.Action("AllProducts")'">
+    Просмотреть склад
+</button>
