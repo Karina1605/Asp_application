@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Lab_1.Models.Orders>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Заказы</h2>
+
+<p>
+    @Html.ActionLink("Новый...", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Покупатель")
+        </th>
+        <th>
+            @Html.DisplayName("Товар")
+        </th>
+        <th>
+            @Html.DisplayName("Дата покупки")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBuying)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Подробнее", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

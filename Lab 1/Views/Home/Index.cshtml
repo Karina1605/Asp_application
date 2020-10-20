@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "HomeView";
+}
+
+<h2>Домашняя страница</h2>
+@Html.ActionLink("Добавить клиента", "Create", "Customers")
+<br />
+@Html.ActionLink("Добавить товар", "Create", "Products")
+<br />
+@Html.ActionLink("Посмотреть товары", "Index", "Products")
+<br />
+@Html.ActionLink("Все покупатели", "Index", "Customers")
+<br />
+@Html.ActionLink("Добавить заказ", "Create", "Orders")
+<br />
+@Html.ActionLink("Все заказы", "Index", "Orders")

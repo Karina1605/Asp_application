@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Lab_1.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Все покупатели</h2>
+
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Имя")
+        </th>
+        <th>
+            @Html.DisplayName("Номер телефона")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.Email }) |
+            @Html.ActionLink("Просмотреть покупки", "Details", new { id=item.Email }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Email })
+        </td>
+    </tr>
+}
+
+</table>

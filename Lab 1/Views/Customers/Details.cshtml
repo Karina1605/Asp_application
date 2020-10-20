@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Lab_1.Models.Orders>
+
+@{
+    ViewBag.Title = "OrdersView";
+}
+
+<h2>Заказы</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Дата покупки")
+        </th>
+        <th>
+            @Html.DisplayName("Продукт")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBuying)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductId)
+        </td>
+    </tr>
+}
+
+</table>
